@@ -31,7 +31,7 @@ class Primitive(ABC):
         return self._mesh.vertices
 
     @property
-    def faces(self):
+    def face_indices(self):
         return self._mesh.face_indices
 
     @property
@@ -45,6 +45,6 @@ class Primitive(ABC):
     def to_stl(self, filepath):
         vertices_faces_to_binary_stl(
             self.vertices,
-            self.faces,
+            self.face_indices,
             filepath
         )

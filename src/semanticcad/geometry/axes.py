@@ -3,6 +3,8 @@ from semanticcad.algebra.function import normalize
 
 
 class Frame3D:
+    Canonical = None
+    
     def __init__(self, origin=[0, 0, 0], v1=[1, 0, 0], v2=[0, 1, 0]):
 
         self.origin = np.asarray(origin, dtype=float)
@@ -19,12 +21,19 @@ class Frame3D:
         # fecha base ortonormal
         self.e2 = normalize(np.cross(self.e3, self.e1))
 
+
     def __repr__(self):
         return (
             f"Frame3D(origin={self.origin}, "
             f"e1={self.e1}, e2={self.e2}, e3={self.e3})"
         )
-        
+
+Frame3D.Canonical = Frame3D(
+    origin=[0, 0, 0],
+    v1=[1, 0, 0],
+    v2=[0, 1, 0]
+)
+
 if __name__ == "__main__":
 
     frame = Frame3D(   origin=[0, 0, 0],

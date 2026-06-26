@@ -30,7 +30,23 @@ print(piece)
 piece.to_dot("operations.dot")
 
 
-box2 = box.translate([5,0,0])
+part1 = box.translate([0,0,0])
+print(type(box))
+print(type(part1))
+'''
+# falta implementar
+# Mesh deve ter alias=["","",....,""] por falta
 
-print(box.mesh.vertices)
-print(box2.mesh.vertices)
+box = Box(l1=20, l2=30, l3=10, alias={"010": "Vertice1", "111": "Vertice2"})
+part1 = box.translate([0,0,0])
+
+part1.add_legnth(   part1.vertice_with_alias(Vertice1),
+                    part1.vertice_with_index(2),
+                    "D1", #label
+                    0#lelvel
+                )
+'''
+
+print(box.mesh)
+print(part1.mesh)
+part1.to_stl("teste_box2.stl")

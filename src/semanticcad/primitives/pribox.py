@@ -4,8 +4,8 @@ from semanticcad.geometry.mesh import Mesh
 from semanticcad.primitives.abstract import Primitive
 
 class PriBox(Primitive):
-    def __init__(self, frame=None, l1=1.0, l2=1.0, l3=1.0):
-        self.frame = frame if frame is not None else Frame3D()
+    def __init__(self, l1=1.0, l2=1.0, l3=1.0):
+        self.frame = Frame3D.Canonical
 
         self.l1 = float(l1)
         self.l2 = float(l2)
@@ -44,7 +44,7 @@ class PriBox(Primitive):
         return Mesh(V, F, LABELS)
 
     def __repr__(self):
-        return self._repr_helper("l1", "l2", "l3", "frame")
+        return self._repr_helper("l1", "l2", "l3")
 
 
 if __name__ == "__main__":

@@ -2,9 +2,9 @@
 
 import numpy as np
 
-from semanticcad.geometry.mesh import Mesh
-from semanticcad.csg.operation import Operation
-
+from semanticcad.geometry.mesh      import Mesh
+from semanticcad.csg.operation      import Operation
+from semanticcad.geometry.transform import transform
 
 class MeshEvaluator:
 
@@ -28,12 +28,7 @@ class MeshEvaluator:
 
             mesh = MeshEvaluator._evaluate_node(node.children[0])
 
-            mesh.vertices += np.asarray(
-                node.params["vector"],
-                dtype=float
-            )
-
-            return mesh
+            return transform(mesh, node)
 
         # -----------------------------
         # rotate

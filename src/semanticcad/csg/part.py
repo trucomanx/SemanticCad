@@ -3,6 +3,7 @@
 from semanticcad.csg.node import Node
 from semanticcad.csg.operation import Operation
 from semanticcad.csg.meshevaluator import MeshEvaluator
+from semanticcad.stl.generate import vertices_faces_to_binary_stl
 
 class Part:
 
@@ -70,6 +71,13 @@ class Part:
     def mesh(self):
         return MeshEvaluator.evaluate(self)
 
+    def to_stl(self, filepath):
+        vertices_faces_to_binary_stl(
+            self.mesh.vertices,
+            self.mesh.face_indices,
+            filepath
+        )
+        
         
     def to_dot(self, filepath):
         """

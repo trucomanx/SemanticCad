@@ -4,8 +4,8 @@ from semanticcad.geometry.mesh import Mesh
 from semanticcad.primitives.abstract import Primitive
 
 class PriCylinder(Primitive):
-    def __init__(self, frame=None, radius=1.0, height=1.0, circle_steps=100):
-        self.frame = frame if frame is not None else Frame3D()
+    def __init__(self, radius=1.0, height=1.0, circle_steps=100):
+        self.frame = Frame3D.Canonical
 
         self.radius = float(radius)
         self.height = float(height)
@@ -96,7 +96,7 @@ class PriCylinder(Primitive):
 
 
     def __repr__(self):
-        return self._repr_helper("radius", "height", "circle_steps", "frame")
+        return self._repr_helper("radius", "height", "circle_steps")
         
 if __name__ == "__main__":
     pri = PriCylinder(radius=1.0, height=1.0, circle_steps=100)
