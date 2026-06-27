@@ -226,8 +226,9 @@ if __name__ == "__main__":
     ]
 
     vertices_faces_to_binary_stl(V, F, "box.stl")
+
 ```  ## File: `semanticcad/geometry/axes.py`
- ```python  
+ ```python
 import numpy as np
 from semanticcad.algebra.function import normalize
 
@@ -272,11 +273,11 @@ if __name__ == "__main__":
     
     print(frame)  
 
-```  
-  
+```
+
 ## File: `semanticcad/core/mesh.py`
 
-```python  
+```python
 #!/usr/bin/python3
 
 class Mesh:
@@ -299,8 +300,7 @@ class Mesh:
             self.face_indices.copy(),
             self.aliases.copy()
         )
-```  
-  
+```
 
 ## File: `semanticcad/geometry/transform.py`
 
@@ -351,3 +351,4 @@ def normalize(v):
     v = v / s
     return v / np.linalg.norm(v)
 ```
+
