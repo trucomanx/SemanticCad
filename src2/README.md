@@ -104,6 +104,10 @@ In SemanticCAD, geometric operations such as union, difference, intersection, an
 
 Geometric operations such as union, difference, and intersection are implemented as standalone functions in geometry/boolean.py, while transformations like translate and rotate are available both as methods on Part and in geometry/transform.py
 
+## Technical drawing
+
+SemanticCAD uses a hybrid approach for generating technical drawings. In addition to automatic inference of silhouettes and sharp edges, the system follows an important semantic rule: any edge that directly connects two vertices with user-defined aliases is considered semantically significant and will always be displayed in the technical drawing, at minimum as a dashed (dotted) line. This ensures that the designer’s intent -- such as centers, axes, critical reference points, and key relationships -- remains clearly visible even after multiple geometric operations like union or intersection.
+
 # Proposed library usage (IMPORTANT!!!!)
 
 This is an example usage of the proposed library.
