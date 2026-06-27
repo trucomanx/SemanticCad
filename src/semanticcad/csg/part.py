@@ -7,8 +7,21 @@ from semanticcad.stl.generate import vertices_faces_to_binary_stl
 
 class Part:
 
-    def __init__(self, root: Node):
+    _counter = 0
+
+    def __init__(self, root: Node, part_name: str | None = None):
         self.root = root
+
+        if part_name is None:
+            self._part_name = f"Part{Part._counter}"
+            Part._counter += 1
+        else:
+            self._part_name = part_name
+
+    @property
+    def part_name(self):
+        return self._part_name
+
 
     def union(self, other):
         return Part(
@@ -65,7 +78,7 @@ class Part:
     '''
     
     def __repr__(self):
-        return f"Part(root={self.root!r})"
+        return f"Part(part_name={self.part_name}, root={self.root!r})"
         
     @property
     def mesh(self):
