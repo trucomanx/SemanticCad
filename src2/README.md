@@ -99,6 +99,11 @@ Defining its internal topological labels (a fixed naming convention for importan
 
 These primitive labels act as stable internal identifiers. They serve as a bridge so that user-defined aliases can be correctly mapped to the corresponding vertices in the mesh. This way, semantic information remains consistent even after geometric transformations.
 
+In SemanticCAD, geometric operations such as union, difference, intersection, and translate are primarily exposed as top-level functions for a cleaner and more intuitive user experience (e.g., sc.union(part1, part2)). This design prioritizes readability and follows a functional approach for combining parts. For convenience and object-oriented fluency, these operations are also available as methods on the Part class (e.g., part1.union(part2)), which internally delegate to the standalone functions. This dual interface allows users to choose the style that best fits their workflow while maintaining consistency across the library.
+
+
+Geometric operations such as union, difference, and intersection are implemented as standalone functions in geometry/boolean.py, while transformations like translate and rotate are available both as methods on Part and in geometry/transform.py
+
 # Proposed library usage (IMPORTANT!!!!)
 
 This is an example usage of the proposed library.
