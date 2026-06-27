@@ -227,7 +227,9 @@ if __name__ == "__main__":
 
     vertices_faces_to_binary_stl(V, F, "box.stl")
 
+
 ```  ## File: `semanticcad/geometry/axes.py`
+
  ```python
 import numpy as np
 from semanticcad.algebra.function import normalize
