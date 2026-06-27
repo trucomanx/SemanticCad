@@ -46,7 +46,7 @@ Vertex aliases are attached to mesh topology (vertex identity), not geometric co
 
 Vertex aliases are defined by the primitive topology. Each primitive defines a fixed set of named vertices. These names are preserved through geometric transformations.
 
-Cylinder primitives define a deterministic labeled topology including axial and discretized perimeter vertices. These labels depend on primitive parameters (e.g., face_steps) and remain stable under transformations.
+Cylinder primitives define a deterministic labeled topology including axial and discretized perimeter vertices. These labels depend on primitive parameters (e.g., radial_segments) and remain stable under transformations.
 
 All primitives are created oriented in their canonical form (Frame3D), with origin in `[0,0,0]` and axes `[[0,0,0],[0,1,0],[0,0,1]]`.
 
@@ -114,11 +114,11 @@ This is an example usage of the proposed library.
 import semanticcad as sc
 
 
-box1 = sc.Box(l1=20, l2=30, l3=10, vertex_alias={"010": "Vertice1", "001": "Vertice2"})
-cyl1 = sc.Cylinder(h=10, r=2, face_steps=100, vertex_alias={"c0_bottom": "CentroAbaixo",
-                                                            "c0_top": "CentroAcima", 
-                                                            "b0": "VerticePerimetroAbaixoStep0", 
-                                                            "t1": "VerticePerimetroAcimaStep1"})
+box1 = sc.Box(l1=20, l2=30, l3=10, alias_map={"010": "Vertice1", "001": "Vertice2"})
+cyl1 = sc.Cylinder(h=10, r=2, radial_segments=100, alias_map={"c0_bottom": "CentroAbaixo",
+                                                              "c0_top": "CentroAcima", 
+                                                              "b0": "VerticePerimetroAbaixoStep0", 
+                                                              "t1": "VerticePerimetroAcimaStep1"})
 
 box2 = box1.translate([10,10,0]) # box2 have the same aliases of box1
 
