@@ -160,7 +160,7 @@ part1.export_stl("filename.stl") # binary
   
 # Current files  
 
-'semanticcad/__init__.py'
+## File: 'semanticcad/__init__.py'
 
 ```
 from .primitives.box import Box
@@ -171,7 +171,7 @@ __all__ = ['Box', 'Cylinder']
 
 ```
 
-'semanticcad/export/stl.py'
+## File: 'semanticcad/export/stl.py'
 
 ```python
 import numpy as np
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     ]
 
     vertices_faces_to_binary_stl(V, F, "box.stl")
-```  'semanticcad/geometry/axes.py'
+```  ## File: 'semanticcad/geometry/axes.py'
  ```python  
 import numpy as np
 from semanticcad.algebra.function import normalize
@@ -274,7 +274,7 @@ if __name__ == "__main__":
 
 ```  
   
-'semanticcad/core/mesh.py'
+## File: 'semanticcad/core/mesh.py'
 
 ```python  
 #!/usr/bin/python3
@@ -302,7 +302,7 @@ class Mesh:
 ```  
   
 
-`semanticcad/geometry/transform.py`
+## File: `semanticcad/geometry/transform.py`
 
 ```python
 import numpy as np
@@ -336,7 +336,7 @@ def rotate_mesh(V, axis, angle_deg):
     return V @ R.T
 ```
 
-`semanticcad/algebra/function.py`
+## File: `semanticcad/algebra/function.py`
 
 ```python
 import numpy as np
