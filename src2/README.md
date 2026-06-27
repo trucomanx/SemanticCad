@@ -123,6 +123,7 @@ cyl1 = sc.Cylinder(h=10, r=2, radial_segments=100, alias_map={"c0_bottom": "Cent
                                                               "c0_top": "CentroAcima", 
                                                               "b0": "VerticePerimetroAbaixoStep0", 
                                                               "t1": "VerticePerimetroAcimaStep1"})
+                                                              # t150 exist and is equal to t(150%radial_segments)
 
 box2 = box1.translate([10,10,0]) # box2 have the same aliases of box1
 
